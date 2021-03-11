@@ -1,0 +1,39 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<header>
+    <div class="header-title-container">
+        <h1>
+            HuevoWiki
+        </h1>
+    </div>
+    <img src="{% static 'img/logo.jpg' %}" alt="" class="header-image">
+</header>
+<main>
+    <div class="main-top">
+        <h2>
+            Una Película de Huevos - Personajes
+        </h2>
+        <img src="{% static 'img/logo_pelicula.jpg' %}" alt="">
+    </div>
+    <div class="personaje-container">
+    {% for personaje in personaje_objects %}
+        <div class="personaje-container__item">
+            <div class="personaje-container__item__title">
+                {{ personaje.nombre }}
+            </div>
+            <div class="personaje-container__item__image">
+                <img src="{{ personaje.image.url }}">
+            </div>
+            <div class="personaje-container__item__role">
+                <b>Rol:</b> {{ personaje.rol }}
+            </div>
+            <div class="personaje-container__item__description">
+                {{ personaje.descripcion }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</main>
