@@ -69,7 +69,8 @@ main {
 }
 
 .personaje-container__item__image img {
-    width: 50%;
+    max-width: 60%;
+    height: 10rem;
     display: block;
     margin: 2rem auto;
 }
